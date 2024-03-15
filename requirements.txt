@@ -16,3 +16,4 @@ matplotlib>=3.7.0
 seaborn>=0.12.2
 scikit-learn
 sqlalchemy>=1.4.37
+db-sqlite3
