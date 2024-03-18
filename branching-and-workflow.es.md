@@ -2,31 +2,51 @@
 
 ## Estrategia de Ramificación en Git
 
-1. **Rama Principal (main):**
-   * Esta rama contendrá el código estable y listo para producción.
-   * El código de esta rama debería ser desplegable en cualquier momento.
-   * Solo se fusiona en esta rama desde ramas de características después de pruebas exhaustivas y revisión de código.
+Este repositorio tendrá ramas para cada tarea con una nomenclatura como esta `tas-<número-de-tarea>-<nombre-de-tarea>`, como en el diagrama a continuación, donde tendremos todas las ramas en el repositorio como una guía visual a través de la estructura del repositorio:
 
-2. **Rama de Desarrollo (dev):**
-   * Esta rama sirve como la rama de integración para el trabajo en curso.
-   * Los miembros del equipo fusionan sus ramas de características en esta rama para pruebas de integración.
-   * Se incorporan regularmente cambios desde la rama principal para asegurarse de que la rama de desarrollo esté actualizada con la última versión estable.
-   * Todas las ramas de características deben derivarse y fusionarse de nuevo en dev.
+```
+└── main 
+    ├── tas-12-data-acquisition
+    └── tas-34-analysis-and-preprocessing
+```
 
-3. **Ramas de Características:**
-   * Cada característica o tarea debe tener su propia rama dedicada.
-   * Los miembros del equipo trabajan en ramas separadas para diferentes características o tareas.
-   * Los nombres de las ramas deben ser descriptivos de la característica o tarea en la que se está trabajando (por ejemplo, feature/data-acquisition, feature/model-building).
-   * Una vez que una característica está completa, se somete a revisión de código y pruebas antes de fusionarse en la rama dev.
 
-4. **Ramas de Trabajo Individual (Opcional):**
-   * Si los miembros del equipo están trabajando en tareas individuales dentro de una característica más grande, pueden crear ramas personales basadas en la rama de características.
-   * Estas ramas tienen una vida corta y deben fusionarse de nuevo en la rama de características correspondiente una vez que se complete la tarea individual.
+## Guía Paso a Paso
 
-5. **Ramas de Lanzamiento (Opcional):**
-   * Si es necesario, se puede crear una rama de lanzamiento desde la rama dev para pruebas finales y preparación antes del despliegue.
-   * No se agregan nuevas características a las ramas de lanzamiento; son únicamente para correcciones de errores y preparación para el despliegue.
-   * Una vez que el lanzamiento esté listo, se puede fusionar la rama de lanzamiento en la rama principal para el despliegue.
+### Clonación del Repositorio o Creación de Codespace
+1. **Codespace:**
+   1. Una vez en el repositorio, haz clic en el botón verde `Code`
+   2. Haz clic en la pestaña de Codespace
+   3. Crea o abre un Codespace
+2. **Clonación en Local**
+   1. Una vez en el repositorio, haz clic en el botón verde `Code`
+   2. Selecciona **HTTPS** y copia el enlace
+   3. Abre tu terminal, CMD o Powershell
+   4. Escribe el comando `git clone` y pega el enlace que copiaste
+   5. Presiona Enter
+
+### Configuración del Entorno
+1. Una vez en tu Codespace o terminal local, escribe los siguientes comandos en orden
+   1. `python -m venv .<nombre-del-entorno>`
+   2. Activa el entorno siguiendo la documentación sobre venv de Python relacionada con tu sistema operativo y línea de comandos
+   3. `pip install -r requirements.txt`
+   4. `code .`
+
+### Creación o Cambio de la Rama de Git
+1. Crear Rama
+   1. En la rama principal escribe en la terminal `git branch <nombre-de-la-rama>`
+2. Cambiar Rama
+   1. En cualquier rama escribe en la terminal `git checkout <nombre-de-la-rama>`
+
+### Actualizar el Repositorio con tus Cambios
+1. Ejecuta los siguientes comandos en orden
+   1. `git add .`
+   2. `git commit -m 'Mensaje del Commit'`
+   3. `git push origin <nombre-de-la-rama>`
+
+### Notas
+* Cada vez que uses el repositorio después de un tiempo, especialmente la rama principal, debes ejecutar el siguiente comando `git pull`
+
 
 ## Flujo de Trabajo:
 

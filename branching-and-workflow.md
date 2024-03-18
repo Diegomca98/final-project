@@ -1,36 +1,49 @@
 # Git Branch Strategy and Workflow
 
 ## Git Branching Strategy
-1. **Master Branch (main):**
+This repository is going to have branches for each task with a nomenclature like this `tas-<task-number>-<task-name>`, as in the diagram below, where in which we will have all the branches in the repository as a visual guide through the repository structure:
 
-* This branch will contain the stable, production-ready code.
-* Code from this branch should be deployable at any time.
-* Only merge into this branch from feature branches after thorough testing and code review.
+```
+└── main 
+    ├── tas-12-data-acquisition
+    └── tas-34-analysis-and-preprocessing
+```
 
-2. **Development Branch (dev):**
+## Step-by-step Guide
 
-* This branch serves as the integration branch for ongoing work.
-* Team members merge their feature branches into this branch for integration testing.
-* Regularly pull changes from the main branch to ensure the dev branch stays up-to-date with the latest stable version.
-* All feature branches should branch off from and merge back into dev.
+### Repository Cloning or Codespace Creation
+1. **Codespace:**
+   1. Once in the repo, click on the green `Code` button
+   2. Click on Codespace tab
+   3. Create or open Codespace
+2. **Cloning to Local**
+   1. Once in the repo, click on the green `Code` button
+   2. Select **HTTPS** and copy the link
+   3. Open your terminal, CMD or Powershell
+   4. Write the command `git clone` and paste the link you copied
+   5. Hit Enter
 
-3. **Feature Branches:**
+### Setup the environment
+1. Once in your Codespace or Local terminal, type in the following commands in order
+   1. `python -m venv .<env-name>`
+   2. Activate the env by following the documentation on python venv related to your OS and command line
+   3. `pip install -r requirements.txt`
+   4. `code .`
 
-* Each feature or task should have its own dedicated branch.
-* Team members work on separate branches for different features or tasks.
-* Branch names should be descriptive of the feature or task being worked on (e.g., feature/data-acquisition, feature/model-building).
-* Once a feature is complete, it undergoes code review and testing before merging into the dev branch.
+### Create or change the git branch
+1. Create Branch
+   1. In main branch write to the terminal `git branch <branch-name>`
+2. Change Branch
+   1. In any branch write to the terminal `git checkout <branch-name>`
 
-4. **Individual Work Branches (Optional):**
+### Update repository with your changes
+1. Run the following commands in order
+   1. `git add .`
+   2. `git commit -m 'Commit Message'`
+   3. `git push origin <branch-name>`
 
-* If team members are working on individual tasks within a larger feature, they can create personal branches based on the feature branch.
-* These branches are short-lived and should be merged back into the corresponding feature branch once the individual task is completed.
-
-5. **Release Branches (Optional):**
-
-* If necessary, a release branch can be created from the dev branch for final testing and preparation before deployment.
-* No new features are added to release branches; they are solely for bug fixes and preparing for deployment.
-* Once the release is ready, it can be merged into the main branch for deployment.
+### Notes
+* Every time you use the repository after a while, specially the main branch, you have to run the following command `git pull`
 
 ## Workflow:
 
