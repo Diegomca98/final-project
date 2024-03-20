@@ -14,8 +14,8 @@ def about_dataset():
         {'name': 'Cancelled', 'description': 'Cancelled Flight Indicator (1=Yes)', 'type': 'Boolean'},
         {'name': 'Diverted', 'description': 'Diverted Flight Indicator (1=Yes)', 'type': 'Boolean'},
         {'name': 'DepTime', 'description': 'Actual Departure Time (local time: hhmm)', 'type': 'Datetime'},
-        {'name': 'DepDelayMinutes','description': 'Difference in minutes between scheduled and actual departure time. Early departures set to 0.', 'type': },
-        {'name': 'DepDelay', 'description': 'Difference in minutes between scheduled and actual departure time. Early departures show negative numbers.', 'type': },
+        {'name': 'DepDelayMinutes','description': 'Difference in minutes between scheduled and actual departure time. Early departures set to 0.', 'type': 'Numeric'},
+        {'name': 'DepDelay', 'description': 'Difference in minutes between scheduled and actual departure time. Early departures show negative numbers.', 'type': 'Numeric'},
         {'name': 'ArrTime', 'description': 'Actual Arrival Time (local time: hhmm)', 'type': 'Datetime'},
         {'name': 'ArrDelayMinutes', 'description': 'Difference in minutes between scheduled and actual arrival time. Early arrivals set to 0.', 'type': 'Numeric'},
         {'name': 'AirTime', 'description': 'Flight Time, in Minutes', 'type': 'Numeric'},
@@ -56,7 +56,7 @@ def about_dataset():
         {'name': 'OriginState', 'description': 'Origin Airport, State Code', 'type': 'String'},
         {'name': 'OriginStateFips', 'description': 'Origin Airport, State Fips', 'type': 'Numeric'},
         {'name': 'OriginStateName', 'description': 'Origin Airport, State Name', 'type': 'String'},
-        {'name': 'OriginWac''description': 'Origin Airport, World Area Code', 'type': 'Numeric'},
+        {'name': 'OriginWac', 'description': 'Origin Airport, World Area Code', 'type': 'Numeric'},
     ]
     col_dict = {}
 
