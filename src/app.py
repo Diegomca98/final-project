@@ -2,12 +2,12 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-app.route('/')
+@app.route('/')
 def index():
     return render_template('index.html')
 
-app.route('/dataset-information')
-def about_dataset():
+@app.route('/about')
+def about():
     columns = [
         {'name': 'FlightDate', 'description':'Flight Date (yyyymmdd)', 'type': 'Datetime'}, 
         {'name': 'Airline', 'description': 'Airline Name', 'type': 'String'}, 
@@ -63,4 +63,16 @@ def about_dataset():
     for i in range(len(columns)):
         col_dict[i+1] = columns[i]
 
-    return col_dict, render_template('about-dataset.html')
+    return col_dict, render_template('about.html')
+
+@app.route('/data')
+def data():
+    return render_template('data.html')
+
+@app.route('/model')
+def model():
+    return render_template('model.html')
+
+@app.route('/deploy')
+def deploy():
+    return render_template('deploy.html')
