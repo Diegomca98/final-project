@@ -1,51 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-    <title>{% block title %} {% endblock %} - Flight Prediction</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
+  <head>
+    <title>Clark - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
-        <a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="Bootstrap">
-            <img src="{{ url_for('static', filename='flight-plane.png') }}" alt="logo">
-        </a>
-        
-        <div class="navbar-nav-scroll">
-            <ul class="navbar-nav bd-navbar-nav flex-row">
-                <li class="nav-item">
-                    <a class="nav-link " href="/">Home</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link active" href="/about">About</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link " href="/data">Data</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="/model" target="_blank" rel="noopener">Model</a>
-                </li>
-        
-                <li class="nav-item">
-                    <a class="nav-link" href="/deploy" target="_blank" rel="noopener">Deploy</a>
-                </li>
-            </ul>
-        </div>
-    </header>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/open-iconic-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
 
-    <div class="container">
-        {% block image %}
-        {% endblock %}
-        {% block content %}
-        {% endblock %}
-    </div>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aos.css') }}">
 
-</body>
-</html>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ionicons.min.css') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  </head>
