@@ -9685,6 +9685,19 @@
   
 
 /* Diego's Style */
-.img.banner {
-  background-size: inherit!important;
+.img.banner, .banner-about, .banner-2 {
+  background-size: contain!important;
+}
+
+i.fa.fa-calculator, i.fa.fa-dollar-sign, i.fa.fa-code {
+  font-size: 3em;
+  color: #aa7e26;
+}
+
+div.row div.col.social-icons a i {
+  font-size: 2em;
+} 
+
+i.fab.fa-github.footer{
+  padding-right: 1em;
 }
