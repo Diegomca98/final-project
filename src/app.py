@@ -18,16 +18,32 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     stats = {
-        'mean': 34,
-        'std': 35,
-        'min': 76,
-        'max': 13,
-        'quant_25': 20,
-        'quant_50': 15,
-        'quant_75': 100
+        'mean': 7.609537,
+        'std': 55.430586,
+        'min': -91.000000,
+        'max': 2678.000000,
+        'quant_25': -14.000000,
+        'quant_50': -5.000000,
+        'quant_75': 10.000000
+    }
+    inferences = {
+        'months_less_flights': 'The month with less flights is February, which is directly related to the amount of days in the month.',
+        'cancels_divertions': 'Most flights are not cancelled nor diverted, but cancellations have the most occurences between those 2 categories.',
+        'dup_values': 'Some columns are pretty much duplicates which had to be dropped, for example columns like IATA_Code_Operating_Airline and IATA_Code_Operating_Airline',
+        'Categorial': 'Airline, DepTime, ArrTime, Marketing_Airline_Network, Operated_or_Branded_Code_Share_Partners, Operating_Airline, Cancelled',
+        'Numerical': 'DepDelay, AirTime, Distance, Month, DOT_ID_Marketing_Airline, Flight_Number_Marketing_Airline, DOT_ID_Operating_Airline, Flight_Number_Operating_Airline, OriginAirportID, DestAirportID, ArrDelay, DivAirportLandings',
+    }
+
+    counters = {
+        'columns': 38,
+        'hours_spent': 8*25,
+        'records': 500000,
+        'coffee_cups': 5*25,
     }
 
     return render_template(
         'index.html', 
-        stats=stats
+        stats = stats,
+        desc_analysis = inferences,
+        counters = counters,
     )

@@ -9701,3 +9701,7 @@ div.row div.col.social-icons a i {
 i.fab.fa-github.footer{
   padding-right: 1em;
 }
+
+a.desc-analysis:hover {
+  color: black;
+}
