@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 import pandas as pd
 import numpy as np
+import os
 
 app = Flask(__name__)
 
@@ -51,7 +52,10 @@ def index():
 
 @app.route('/eda')
 def eda_data():
+    graphs = os.listdir('./static/graphs')
+
     return render_template(
         'single.html',
-        title = 'Fly Me! - Exploratory Data Analysis'
+        title = 'Fly Me! - Exploratory Data Analysis',
+        visuals = graphs
     )

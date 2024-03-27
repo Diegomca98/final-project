@@ -1,63 +1,174 @@
 {% extends "layout.html" %}
 
-    {% block content %}
-	  
-	  
-      {% block navbar_data %}
-        {% include "navbar-data.html" %}
-      {% endblock %}
+  {% block content %}
+  
+  
+    {% block navbar_data %}
+      {% include "navbar-data.html" %}
+    {% endblock %}
 
-      {% block eda_data_banner %}
-        {% include "eda-data-banner.html" %}
-      {% endblock %}
+    {% block eda_data_banner %}
+      {% include "eda-data-banner.html" %}
+    {% endblock %}
 
-      <section class="ftco-section">
-        <div class="container">
-            <div class="row mb-5 hyp-eda-data">
-                <div class="col-lg-8 ftco-animate">
-                    <div class="hyp-data d-flex p-4 bg-dark">
-                        <div class="row">
-                            <h2 class="eda-title mb-3">Hypothesis Title</h2>
-                            <p>
-                                Hypothesis Data asdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasd asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas asdfasdfasdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfasHypothesis Data asdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasd asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas asdfasdfasdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 visuals ftco-animate d-flex align-items-stretch">
-                  <div class='container container-visual'>
-                    <a href="{{ url_for('static', filename='graphs/arr_delay_by_airline.png') }}" class="zoomable">
-                      <img class="data-visual img-fluid" src="{{ url_for('static', filename='graphs/arr_delay_by_airline.png') }}" alt="">
-                    </a>
-                  </div>
-                </div>
-            </div>
-            <div class="row mb-5 hyp-eda-data">
-                <div class="col-lg-4 visuals ftco-animate d-flex align-items-stretch">
-                  <div class='container container-visual'>
-                    <a href="{{ url_for('static', filename='graphs/arr_delay_by_airline.png') }}" class="zoomable">
-                      <img class="data-visual img-fluid" src="{{ url_for('static', filename='graphs/arr_delay_by_airline.png') }}" alt="">
-                    </a>
-                  </div>
-                </div>
-                <div class="col-lg-8 ftco-animate">
-                    <div class="hyp-data d-flex p-4 bg-dark">
-                        <div class="row">
-                            <h2 class="eda-title mb-3">Hypothesis Title</h2>
-                            <p>
-                                Hypothesis Data asdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasd asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas asdfasdfasdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row mb-5 hyp-eda-data">
+        <div class="col-lg-4 visuals ftco-animate d-flex align-items-stretch">
+          <div class='container container-visual'>
+            <a href="{{ url_for('static', filename='graphs/' + visuals[0]) }}" class="zoomable">
+              <img class="data-visual img-fluid" src="{{ url_for('static', filename='graphs/' + visuals[0]) }}" alt="{{visuals[0]}}">
+            </a>
+          </div>
         </div>
-    </section>
+        <div class="col-lg-8 ftco-animate">
+          <div class="hyp-data d-flex p-4 bg-dark">
+            <div class="row">
+              <h2 class="eda-title mb-3">Hypothesis Title</h2>
+              <p>
+                Hypothesis Data asdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasd asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas asdfasdfasdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-5 hyp-eda-data">
+        <div class="col-lg-8 ftco-animate">
+          <div class="hyp-data d-flex p-4 bg-dark">
+            <div class="row">
+              <h2 class="eda-title mb-3">Hypothesis Title</h2>
+              <p>
+                Hypothesis Data asdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasd asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas asdfasdfasdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfasHypothesis Data asdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasd asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas asdfasdfasdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 visuals ftco-animate d-flex align-items-stretch">
+          <div class='container container-visual'>
+            <a href="{{ url_for('static', filename='graphs/' + visuals[1]) }}" class="zoomable">
+              <img class="data-visual img-fluid" src="{{ url_for('static', filename='graphs/' + visuals[1]) }}" alt="{{visuals[1]}}">
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="row mb-5 hyp-eda-data">
+        <div class="col-lg-4 visuals ftco-animate d-flex align-items-stretch">
+          <div class='container container-visual'>
+            <a href="{{ url_for('static', filename='graphs/' + visuals[2]) }}" class="zoomable">
+              <img class="data-visual img-fluid" src="{{ url_for('static', filename='graphs/' + visuals[2]) }}" alt="{{visuals[2]}}">
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-8 ftco-animate">
+          <div class="hyp-data d-flex p-4 bg-dark">
+            <div class="row">
+              <h2 class="eda-title mb-3">Hypothesis Title</h2>
+              <p>
+                Hypothesis Data asdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasd asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas asdfasdfasdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-5 hyp-eda-data">
+        <div class="col-lg-8 ftco-animate">
+          <div class="hyp-data d-flex p-4 bg-dark">
+            <div class="row">
+              <h2 class="eda-title mb-3">Hypothesis Title</h2>
+              <p>
+                Hypothesis Data asdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasd asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas asdfasdfasdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfasHypothesis Data asdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasd asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas asdfasdfasdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 visuals ftco-animate d-flex align-items-stretch">
+          <div class='container container-visual'>
+            <a href="{{ url_for('static', filename='graphs/' + visuals[3]) }}" class="zoomable">
+              <img class="data-visual img-fluid" src="{{ url_for('static', filename='graphs/' + visuals[3]) }}" alt="{{visuals[3]}}">
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="row mb-5 hyp-eda-data">
+        <div class="col-lg-4 visuals ftco-animate d-flex align-items-stretch">
+          <div class='container container-visual'>
+            <a href="{{ url_for('static', filename='graphs/' + visuals[5]) }}" class="zoomable">
+              <img class="data-visual img-fluid" src="{{ url_for('static', filename='graphs/' + visuals[5]) }}" alt="{{visuals[5]}}">
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-8 ftco-animate">
+          <div class="hyp-data d-flex p-4 bg-dark">
+            <div class="row">
+              <h2 class="eda-title mb-3">Hypothesis Title</h2>
+              <p>
+                Hypothesis Data asdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasd asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas asdfasdfasdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-5 hyp-eda-data">
+        <div class="col-lg-8 ftco-animate">
+          <div class="hyp-data d-flex p-4 bg-dark">
+            <div class="row">
+              <h2 class="eda-title mb-3">Hypothesis Title</h2>
+              <p>
+                Hypothesis Data asdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasd asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas asdfasdfasdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfasHypothesis Data asdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasd asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas asdfasdfasdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 visuals ftco-animate d-flex align-items-stretch">
+          <div class='container container-visual'>
+            <a href="{{ url_for('static', filename='graphs/' + visuals[4]) }}" class="zoomable">
+              <img class="data-visual img-fluid" src="{{ url_for('static', filename='graphs/' + visuals[4]) }}" alt="{{visuals[4]}}">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  <!--
+  <section class="ftco-section">
+    <div class="container">
+      {% for image in image_list %}
+      <div class="row mb-5 hyp-eda-data">
+        <div class="col-lg-4 visuals ftco-animate d-flex align-items-stretch">
+          <div class='container container-visual'>
+            <a href="{{ url_for('static', filename='graphs/' + image) }}" class="zoomable">
+              <img class="data-visual img-fluid" src="{{ url_for('static', filename='graphs/' + image) }}" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-8 ftco-animate">
+          <div class="hyp-data d-flex p-4 bg-dark">
+            <div class="row">
+              <h2 class="eda-title mb-3">Hypothesis Title</h2>
+              <p>
+                Hypothesis Data asdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasd asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas asdfasdfasdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    
+  </section>
+  -->
     
 		
-      {% block footer %}
-        {% include 'footer.html' %}
-      {% endblock %}
-
+    {% block footer %}
+      {% include 'footer.html' %}
     {% endblock %}
+
+  {% endblock %}
     
