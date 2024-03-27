@@ -33,7 +33,14 @@
                     <span class="number" data-number="38">0</span>
                     <span>Columns</span>
                 </p>
-                <p><a href="#" class="btn btn-primary py-3 px-3">Test Model</a></p>
+                <div class="row">
+                    <div class="col">
+                        <p><a href="#" class="btn btn-primary py-3 px-3 btn-about-sec">Model</a></p>
+                    </div>
+                    <div class="col">
+                        <p><a href="{{ url_for('eda_data') }}" class="btn btn-primary py-3 px-3 btn-about-sec">EDA</a></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
