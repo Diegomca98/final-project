@@ -1,31 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Fly Me! - Flight Predction Project</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+{% extends 'layout.html' %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/open-iconic-bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
-    
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/aos.css') }}">
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/ionicons.min.css') }}">
-    
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/flaticon.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/icomoon.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css') }}">
-
-  </head>
-
-{#{% extends 'layout.html' %}#}
+{% block content %}
 	<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	
 		{% block navbar %}
@@ -52,86 +27,25 @@
 			{% include 'eda.html' %}
 		{% endblock %}
  
-
-    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-    	<div class="container">
-				<div class="row d-md-flex align-items-center">
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="{{ counters.columns }}">0</strong>
-                <span>Variables Analyzed</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="{{ counters.hours_spent }}">0</strong>
-                <span>Approximate Hours Spent</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="{{ counters.records }}">0</strong>
-                <span>Flights</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="{{counters.coffee_cups}}">0</strong>
-                <span>Cups of Coffee</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-section ftco-hireme img margin-top" style="background-image: url({{ url_for('static', filename='images/bg_1.jpg') }})">
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-md-7 ftco-animate text-center">
-						<h2>I'm <span>Available</span> for freelancing</h2>
-						<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-						<p class="mb-0"><a href="#" class="btn btn-primary py-3 px-5">Hire me</a></p>
-					</div>
-				</div>
-			</div>
-		</section>
-
+    {% block counter_data %}
+      {% include "counter-data.html" %}
+    {% endblock %}
+    
     {% block team_info %}
-		{% include 'team.html' %}
-	{% endblock %}
+		  {% include 'team.html' %}
+	  {% endblock %}
 		
-	{% block footer %}
-		{% include 'footer.html' %}
-	{% endblock %}
+	  {% block footer %}
+		  {% include 'footer.html' %}
+	  {% endblock %}
     
   
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
+{% endblock %}
 
-  <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
-  <script src="{{ url_for('static', filename = 'js/jquery-migrate-3.0.1.min.js') }}"></script>
-  <script src="{{ url_for('static', filename = 'js/popper.min.js') }}"></script>
-  <script src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
-  <script src="{{ url_for('static', filename = 'js/jquery.easing.1.3.js') }}"></script>
-  <script src="{{ url_for('static', filename = 'js/jquery.waypoints.min.js') }}"></script>
-  <script src="{{ url_for('static', filename = 'js/jquery.stellar.min.js') }}"></script>
-  <script src="{{ url_for('static', filename = 'js/owl.carousel.min.js') }}"></script>
-  <script src="{{ url_for('static', filename = 'js/jquery.magnific-popup.min.js') }}"></script>
-  <script src="{{ url_for('static', filename = 'js/aos.js') }}"></script>
-  <script src="{{ url_for('static', filename = 'js/jquery.animateNumber.min.js') }}"></script>
-  <script src="{{ url_for('static', filename = 'js/scrollax.min.js') }}"></script>
-  
-  <script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
     
   </body>
 </html>

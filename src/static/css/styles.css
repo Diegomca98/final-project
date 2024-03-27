@@ -9705,3 +9705,17 @@ i.fab.fa-github.footer{
 a.desc-analysis:hover {
   color: black;
 }
+
+footer.ftco-footer.ftco-section {
+  box-shadow: 0 0 5em #ffbd39!important;
+  border-radius: 2em 2em 0 0;
+}
+
+p.p-copyright {
+  text-shadow: 0em 0em 1em #ffbd39!important;
+}
+
+footer.cool-foot {
+  padding-bottom: 1em !important;
+  padding-top: 4em;
+}
