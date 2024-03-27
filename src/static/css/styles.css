@@ -9696,7 +9696,12 @@ i.fa.fa-calculator, i.fa.fa-dollar-sign, i.fa.fa-code {
 
 div.row div.col.social-icons a i {
   font-size: 2em;
+  /* text-shadow: 0px -2px 5px white; */
 } 
+
+/* div.row.social-icons-row div.col.social-icons a i {
+  text-shadow: 0px 0px 5px #ffbd39;
+} */
 
 i.fab.fa-github.footer{
   padding-right: 1em;
@@ -9740,4 +9745,12 @@ div.row.hyp-eda-data .hyp-data.d-flex.p-4.bg-dark {
 
 div.container.container-visual img.data-visual.img-fluid{
   border-radius: 1em;
+}
+
+.contact-section .box .icon {
+  box-shadow: 0 0 30px #ffbd39;
+}
+
+.services-1 .icon i {
+  text-shadow: 0px 0px 5px #ffbd39;
 }
