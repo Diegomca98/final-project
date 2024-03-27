@@ -1,4 +1,4 @@
-{% block navbar %}
+{% block navbar_data %}
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">    
         <div class="container">
             <a class="navbar-brand" href="{{ url_for('index') }}">FLY ME!</a>
@@ -8,12 +8,7 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav nav ml-auto">
-                    <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-                    <li class="nav-item"><a href="#tasks-section" class="nav-link"><span>Tasks</span></a></li>
-                    <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-                    <li class="nav-item"><a href="#desc-analyis-section" class="nav-link"><span>Descriptive Analysis</span></a></li>
-                    <li class="nav-item"><a href="#eda-section" class="nav-link"><span>EDA</span></a></li>
-                    <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Team</span></a></li>
+                    <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link"><span>Home</span></a></li>
                 </ul>
             </div>
         </div>

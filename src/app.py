@@ -43,7 +43,15 @@ def index():
 
     return render_template(
         'index.html', 
+        title = 'Fly Me! - Flight Prediction Model',
         stats = stats,
         desc_analysis = inferences,
         counters = counters,
+    )
+
+@app.route('/eda')
+def eda_data():
+    return render_template(
+        'single.html',
+        title = 'Fly Me! - Exploratory Data Analysis'
     )

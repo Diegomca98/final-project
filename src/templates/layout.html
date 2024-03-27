@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Clark - Free Bootstrap 4 Template by Colorlib</title>
+    <title>{{ title }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -22,9 +22,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/icomoon.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
 
   </head>
-
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
   {% block content %}{% endblock %}
 
   
@@ -42,3 +45,17 @@
   <script src="{{ url_for('static', filename = 'js/scrollax.min.js') }}"></script>
   
   <script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+  
+  <!-- Add the Magnific Popup initialization script -->
+  <script>
+    $(document).ready(function() {
+      $('.zoomable').magnificPopup({
+          type: 'image',
+          gallery:{
+              enabled:true
+          }
+      });
+    });
+  </script>
+</body>
+</html>

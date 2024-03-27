@@ -9719,3 +9719,25 @@ footer.cool-foot {
   padding-bottom: 1em !important;
   padding-top: 4em;
 }
+
+div.visuals img.data-visual {
+  object-fit: cover;
+  width: 100%; /* Ensure the image covers the entire container */
+  height: 100%; /* Ensure the image covers the entire container */
+}
+
+div.visuals .container {
+  width: 400px;
+  height: 300px;
+  overflow: hidden; /* Ensure the image is clipped if it exceeds the container */
+  border: 1px solid black;
+}
+
+div.row.hyp-eda-data .hyp-data.d-flex.p-4.bg-dark {
+  padding-left: 3em !important;
+  border-radius: 1em;
+}
+
+div.container.container-visual img.data-visual.img-fluid{
+  border-radius: 1em;
+}
