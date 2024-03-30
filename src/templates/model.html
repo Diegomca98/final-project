@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+  {% block content %}
+  
+  
+    {% block navbar_data %}
+      {% include "navbar-data.html" %}
+    {% endblock %}
+
+    {% block single_banner %}
+      {% include "single-banner.html" %}
+    {% endblock %}
+
+    <section class="ftco-section">
+    <div class="container">
+        <div class="row mb-5 hyp-eda-data">
+            <!--<div class="col-lg-4 visuals ftco-animate d-flex align-items-stretch">
+                <div class='container container-visual model-image'>
+                    <a href="{{ url_for('static', filename='images/bg_1.png') }}" class="zoomable">
+                        <img class="data-visual img-fluid" src="{{ url_for('static', filename='images/bg_1.png') }}" alt="{{visuals[0]}}">
+                    </a>
+                </div>
+            </div>-->
+            <div class="col"></div>
+            <div class="col-lg-8 ftco-animate">
+                <div class="hyp-data p-4 bg-dark">
+                    <div class="form-wrapper">
+                        <h2 class="model-form text-center">Try Making a Prediction</h2>
+                        <form action="{{ url_for('model_deploy') }}" method="post" class="w-100">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="val1">Value 1:</label>
+                                        <input type="number" step="any" name="val1" id="val1" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="val2">Value 2:</label>
+                                        <input type="number" step="any" name="val2" id="val2" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="val3">Value 3:</label>
+                                        <input type="number" step="any" name="val3" id="val3" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="val4">Value 4:</label>
+                                        <input type="number" step="any" name="val4" id="val4" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="val5">Value 5:</label>
+                                        <input type="number" step="any" name="val5" id="val5" class="form-control" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Predict</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+</section>
+
+    
+
+    
+    
+    
+  
+  
+  
+  <!--
+  <section class="ftco-section">
+    <div class="container">
+      {% for image in image_list %}
+      <div class="row mb-5 hyp-eda-data">
+        <div class="col-lg-4 visuals ftco-animate d-flex align-items-stretch">
+          <div class='container container-visual'>
+            <a href="{{ url_for('static', filename='graphs/' + image) }}" class="zoomable">
+              <img class="data-visual img-fluid" src="{{ url_for('static', filename='graphs/' + image) }}" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-8 ftco-animate">
+          <div class="hyp-data d-flex p-4 bg-dark">
+            <div class="row">
+              <h2 class="eda-title mb-3">Hypothesis Title</h2>
+              <p>
+                Hypothesis Data asdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasd asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas asdfasdfasdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa asdfasdfasdfasdfas
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    
+  </section>
+  -->
+    
+		
+    {% block footer %}
+      {% include 'footer.html' %}
+    {% endblock %}
+
+  {% endblock %}
+    

@@ -1,0 +1,52 @@
+{% block counter_data %}
+<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+    <div class="container">
+            <div class="row d-md-flex align-items-center">
+      <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text">
+            <strong class="number" data-number="{{ counters.columns }}">0</strong>
+            <span>Variables Analyzed</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text">
+            <strong class="number" data-number="{{ counters.hours_spent }}">0</strong>
+            <span>Approximate Hours Spent</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text">
+            <strong class="number" data-number="{{ counters.records }}">0</strong>
+            <span>Flights</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text">
+            <strong class="number" data-number="{{counters.coffee_cups}}">0</strong>
+            <span>Cups of Coffee</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ftco-section ftco-hireme img margin-top" style="background-image: url({{ url_for('static', filename='images/bg_1.jpg') }})">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-7 ftco-animate text-center">
+              <h2>Check <span>Kaggle</span> for More Datasets</h2>
+              <p class='data-phrase'>In the vast landscape of data, a powerful current surges, carrying with it the essential currents of energy and insight, nourishing every corner it touches with the vital force of knowledge.</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+{% endblock %}

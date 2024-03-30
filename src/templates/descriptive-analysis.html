@@ -1,0 +1,71 @@
+{% block descriptive_analysis %}
+<section class="ftco-section" id="desc-analyis-section">
+    <div class="container">
+        <div class="row justify-content-center py-5 mt-5">
+      <div class="col-md-12 heading-section text-center ftco-animate">
+          <h1 class="big big-2">Descriptive Analysis</h1>
+        <h2 class="mb-4">Descriptive Analysis</h2>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+      </div>
+    </div>
+        <div class="row">
+                <div class="col-md-4 text-center d-flex ftco-animate">
+                    <a href="#" class="desc-analysis services-1">
+                        <span class="icon">
+                            <i class="fa fa-calendar"></i>
+                        </span>
+                        <div class="desc">
+                            <h3 class="mb-5">Month with Less Flights</h3>
+                            <p class="mb-5 desc-analyis">{{ desc_analysis.months_less_flights }}</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 text-center d-flex ftco-animate">
+                    <a href="#" class="services-1 desc-analysis">
+                        <span class="icon">
+                            <i class="fa fa-times-circle"></i>
+                        </span>
+                        <div class="desc">
+                            <h3 class="mb-5">Cancellations and Divertions</h3>
+                            <p class="mb-5 desc-analyis">{{ desc_analysis.cancels_divertions }}</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 text-center d-flex ftco-animate">
+                    <a href="#" class="services-1 desc-analysis">
+                        <span class="icon">
+                            <i class="fa fa-clone"></i>
+                        </span>
+                        <div class="desc">
+                            <h3 class="mb-5">Duplicated Columns</h3>
+                            <p class="mb-5 desc-analyis">{{ desc_analysis.dup_values }}</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col text-center d-flex ftco-animate">
+                    <a href="#" class="services-1 desc-analysis">
+                        <span class="icon">
+                            <i class="fa fa-list"></i>
+                        </span>
+                        <div class="desc">
+                            <h3 class="mb-5">Categorical Variables</h3>
+                            <p class="mb-5 desc-analyis">{{ desc_analysis.Categorial }}</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col text-center d-flex ftco-animate">
+                    <a href="#" class="services-1 desc-analysis">
+                        <span class="icon">
+                            <i class="fa fa-hashtag"></i>
+                        </span>
+                        <div class="desc">
+                            <h3 class="mb-5">Numerical Variables</h3>
+                            <p class="mb-5 desc-analyis">{{ desc_analysis.Numerical }}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+    </div>
+</section>
+{% endblock %}
