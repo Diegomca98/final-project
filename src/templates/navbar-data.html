@@ -9,6 +9,9 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav nav ml-auto">
                     <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link"><span>Home</span></a></li>
+                    {% if pred %}
+                    <li class="nav-item"><a href="{{ url_for('model_deploy') }}" class="nav-link"><span>Model</span></a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
