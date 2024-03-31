@@ -9784,3 +9784,8 @@ section div.container-visual.model-image img {
   width: 100%!important; /* Make the image fill its container */
   height: auto!important; /* Maintain aspect ratio */
 }
+
+span.pred-text {
+  color: #ffbd39;
+  text-decoration: underline;
+}

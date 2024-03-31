@@ -16,7 +16,6 @@ model = load(
     )
 )
 
-# Airports is going to be used for OriginCity and airport id(Origin and Destination)
 airports = pd.read_csv('../data/webapp/airports.csv')
 airlines = pd.read_csv('../data/webapp/airlines_prediction.csv')
 scale_for_model = pd.read_csv('../data/webapp/scale_for_model.csv')
@@ -136,32 +135,55 @@ def predict():
         'AirTime': 673.0,
         'Month': 7
     }
+    
+    median_dict = {
+        'OriginAirportID': 32,
+        'DestAirportID': 40,
+        'Airline': 3,
+        'OriginCityName': 27,
+        'Distance': 646.0,
+        'AirTime': 94.0,
+        'Month': 4,
+    }
+    iqr_dict = {
+        'OriginAirportID': 62,
+        'DestAirportID': 59,
+        'Airline': 7,
+        'OriginCityName': 59,
+        'Distance': 667.0,
+        'AirTime': 81.0,
+        'Month': 4,
+    }
+
+
 
     max_series = pd.Series(max_dict)
     min_series = pd.Series(mins_dict)
+    median_series = pd.Series(median_dict)
+    iqr_series = pd.Series(iqr_dict)
 
     origin_airport_ID = int(request.form['origin_airport_ID'])
     dest_airport_ID = int(request.form['dest_airport_ID'])
-    airline = request.form['airline']
-    origin_city_name = airports[airports['AirportID'] == origin_airport_ID]['CityID'].iloc[0]
-    #origin_city_name = request.form['origin_airport_ID']
+
+    airline = int(request.form['airline'])
+    origin_city_name = int(request.form['city'])
     distance = float(request.form['distance'])
     air_time = float(request.form['f_duration'])
-    month = float(request.form['month'])
+    month = int(request.form['month'])
 
     pred_dict = {
         'OriginAirportID': origin_airport_ID,
-        'DestAirportID': int(dest_airport_ID),
-        'Airline': int(airline),
+        'DestAirportID': dest_airport_ID,
+        'Airline': airline,
         'OriginCityName': origin_city_name,
         'Distance': distance,
         'AirTime': air_time,
-        'Month': int(month)
+        'Month': month
     }
 
     # Apply scaling
     df = pd.DataFrame([pred_dict])
-    scaled_data = (df - min_series)/(max_series - min_series)
+    scaled_data = (df - median_series) / iqr_series
     
 
     dict_for_pred = {
@@ -169,23 +191,24 @@ def predict():
         'DestAirportID': int(scaled_data.iloc[0]['DestAirportID']),
         'Airline': int(scaled_data.iloc[0]['Airline']),
         'OriginCityName': int(scaled_data.iloc[0]['OriginCityName']),
-        'Distance': scaled_data.iloc[0]['Distance'],
-        'AirTime': scaled_data.iloc[0]['AirTime'],
+        'Distance': int(scaled_data.iloc[0]['Distance']),
+        'AirTime': int(scaled_data.iloc[0]['AirTime']),
         'Month': int(scaled_data.iloc[0]['OriginAirportID'])
     }
 
-    data_scaled = pd.DataFrame([dict_for_pred])
 
     # Make prediction using the model
-    prediction = str(int(model.predict(data_scaled)))
+    prediction = str(int(model.predict(scaled_data)))
     
     #Perform model prediction with the selected AirportID
     return render_template(
         'prediction.html',
-        transformation = df,
-        prediction = pred_dict,
-        data = data_scaled,
-        banner_title = f"Most likely you're going to arrive {class_dict[prediction]}",
+        pred_dict = pred_dict,
+        df = df,
+        scaled = type(scaled_data),
+        prediction = prediction,
+        banner_title = "Most likely you're going to arrive",
+        text = class_dict[prediction],
         breadcrumb = 'MODEL',
         view_name = 'model_deploy',
         pred = True

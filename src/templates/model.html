@@ -23,20 +23,20 @@
                               <div class="row">
                                   <div class="col">
                                       <div class="form-group">
-                                          <label for="origin_airport_ID">Traveling From:</label>
+                                          <label for="origin_airport_ID">Traveling From Airport:</label>
                                           <select id="origin_airport_ID" name="origin_airport_ID" class="form-control">
                                             <option value="">Select an option</option>  
                                             {% for airport in airports_cities.values %}
-                                              <option value="{{ airport[0] }}">{{ airport[1] }}</option>
+                                              <option value="{{ airport[1] }}">{{ airport[2] }}</option>
                                             {% endfor %}
                                           </select>
                                       </div>
                                       <div class="form-group">
-                                          <label for="dest_airport_ID">Traveling To:</label>
+                                          <label for="dest_airport_ID">Traveling To Airport:</label>
                                           <select id="dest_airport_ID" name="dest_airport_ID" class="form-control">
                                             <option value="">Select an option</option>
                                             {% for airport in airports_cities.values %}
-                                              <option value="{{ airport[0] }}">{{ airport[1] }}</option>
+                                              <option value="{{ airport[1] }}">{{ airport[2] }}</option>
                                             {% endfor %}
                                           </select>
                                       </div>
@@ -49,8 +49,17 @@
                                             {% endfor %}
                                           </select>
                                       </div>
-                                  </div>
-                                  <div class="col">
+                                      <div class="form-group">
+                                          <label for="city">Trveling from City:</label>
+                                          <select id="city" name="city" class="form-control">
+                                            <option value="">Select an option</option>
+                                            {% for airport in airports_cities.values %}
+                                              <option value="{{ airport[3] }}">{{ airport[2] }}</option>
+                                            {% endfor %}
+                                          </select>
+                                      </div>
+                                    </div>
+                                    <div class="col">
                                       <div class="form-group">
                                           <label for="distance">Distance:</label>
                                           <input type="number" step="any" name="distance" id="val4" class="form-control" required>

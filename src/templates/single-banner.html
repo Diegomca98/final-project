@@ -4,11 +4,12 @@
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
             <div class="col-md-12 ftco-animate pb-5 mb-3 text-center">
-                <h1 class="mb-3 bread">{{ banner_title }}</h1>
+                {% if pred %}
+                    <h1 class="mb-3 bread">{{ banner_title }} <span class='pred-text'>{{ text }}</span></h1>
+                {% else %}
+                    <h1 class="mb-3 bread">{{ banner_title }}</h1>
+                {% endif %}
                 <p class="breadcrumbs"><span class="mr-2"><a href="{{ url_for('index') }}">Home <i class="fas fa-chevron-right"></i></a></span><span class="mr-2"><a href="{{ url_for(view_name) }}">{{ breadcrumb }} </a></span></p>
-                <p>pred_dict: {{ prediction }}</p>
-                <p>Data Scaled: {{ data }}</p>
-                <p>Transformation: {{ transformation }}</p>
             </div>
         </div>
     </div>
