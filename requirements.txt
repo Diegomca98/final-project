@@ -19,3 +19,4 @@ sqlalchemy>=1.4.37
 db-sqlite3
 flask
 xgboost
+gunicorn
