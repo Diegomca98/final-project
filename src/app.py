@@ -59,11 +59,19 @@ def index():
 @app.route('/eda')
 def eda_data():
     graphs = os.listdir('./static/graphs')
+    g = [
+        'arr_delay_by_airline.png',
+        'arr_dep_delay-less-30.png',
+        'eda-cat_values.png', #
+        'eda-cat_values0.png', #
+        'eda-correlation.png', #
+        'eda-numerical.png'
+    ]
 
     return render_template(
         'single.html',
         title = 'Fly Me! - Exploratory Data Analysis',
-        visuals = graphs,
+        visuals = g,
         banner_title = 'Exploratory Data Analysis',
         breadcrumb = 'EDA',
         view_name = 'eda_data'
